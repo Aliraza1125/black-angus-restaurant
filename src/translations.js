@@ -73,6 +73,16 @@ export const translations = {
     reservationWeekend: "23h30 en week-end.",
     reservationBookButton: "Réserver",
     reservationImageAlt: "Restaurant Black Angus Grande Salle Paris",
+
+    // Legal Notices Page
+    legalNoticesTitle: "Mentions légales",
+    legalNoticesIntro: "Conformément aux dispositions des articles 6-III et 19 de la Loi n° 2004-575 du 21 juin 2004 pour la Confiance dans l'économie numérique, dite L.C.E.N., nous portons à la connaissance des utilisateurs et visiteurs du site restaurantblackangus.com les informations suivantes :",
+    legalNoticesInfoTitle: "Informations légales :",
+    legalNoticesStatus: "Statut du propriétaire : Société",
+    legalNoticesName: "Nom : X REPUBLIQUE",
+    legalNoticesSiret: "Siret : 98234605800018",
+    legalNoticesAddress: "Adresse du siège social : 71 RUE DE PROVENCE 75009 PARIS",
+    legalNoticesHosting: "L'hébergeur du site est : Siteground",
   },
   en: {
     // Header
@@ -148,5 +158,15 @@ export const translations = {
     reservationWeekend: "11:30 pm on weekends.",
     reservationBookButton: "Book",
     reservationImageAlt: "Restaurant Black Angus Main Dining Room Paris",
+
+    // Legal Notices Page
+    legalNoticesTitle: "Legal notices",
+    legalNoticesIntro: "In accordance with the provisions of Articles 6-III and 19 of Law No. 2004-575 of June 21, 2004 for Confidence in the Digital Economy (L.C.E.N.), we inform users and visitors of the restaurantblackangus.com website of the following information:",
+    legalNoticesInfoTitle: "Legal information:",
+    legalNoticesStatus: "Owner status: Company",
+    legalNoticesName: "Name: X REPUBLIQUE",
+    legalNoticesSiret: "Siret: 98234605800018",
+    legalNoticesAddress: "Head office address: 71 RUE DE PROVENCE 75009 PARIS",
+    legalNoticesHosting: "The website host is: Siteground",
   }
 };
