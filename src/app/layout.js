@@ -208,6 +208,7 @@ export default function RootLayout({ children }) {
         <Script src="/wp-content/plugins/breakdance/plugin/animations/scrolling/js/parallaxc93c.js" strategy="afterInteractive" />
         <Script src="https://unpkg.com/gsap@3.12.2/dist/gsap.min.js" strategy="afterInteractive" />
         <Script src="https://unpkg.com/gsap@3.12.2/dist/ScrollTrigger.min.js" strategy="afterInteractive" />
+        <Script src="https://cdn.trustindex.io/loader.js" strategy="afterInteractive" />
       </body>
     </html>
   );
