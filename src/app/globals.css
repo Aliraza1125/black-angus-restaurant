@@ -24,27 +24,3 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
-
-/* Fix Next.js Image sizing issues */
-.breakdance-image-object {
-  width: 100% !important;
-  height: auto !important;
-  max-width: 100%;
-  object-fit: contain;
-}
-
-/* Ensure Image wrapper doesn't cause overflow */
-.breakdance-image-clip img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
-/* Fix header logo sizing specifically */
-.bde-image-130-108 img,
-.bde-image-130-109 img {
-  width: 100%;
-  height: auto;
-  max-height: 80px;
-  object-fit: contain;
-}
