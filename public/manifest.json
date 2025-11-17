@@ -1,0 +1,33 @@
+{
+  "name": "Black Angus Restaurant Paris",
+  "short_name": "Black Angus",
+  "description": "Le restaurant qui sublime la viande à Paris 11ème",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ed1d23",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/wp-content/uploads/2024/12/cropped-logo-black-angus-reseaux-sociaux-32x32.jpg",
+      "sizes": "32x32",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "/wp-content/uploads/2024/12/cropped-logo-black-angus-reseaux-sociaux-180x180.jpg",
+      "sizes": "180x180",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "/wp-content/uploads/2024/12/cropped-logo-black-angus-reseaux-sociaux-192x192.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "/wp-content/uploads/2024/12/cropped-logo-black-angus-reseaux-sociaux-192x192.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ]
+}

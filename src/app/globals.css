@@ -32,13 +32,21 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  /* Optimized font variables from next/font */
+  --font-antonio: var(--font-antonio);
+  --font-outfit: var(--font-outfit);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-outfit);
   --font-mono: var(--font-geist-mono);
+}
+
+/* Map font families to next/font optimized fonts */
+body {
+  font-family: var(--font-outfit), system-ui, -apple-system, sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {

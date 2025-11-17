@@ -1,5 +1,10 @@
+import withPWA from '@ducanh2912/next-pwa';
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Empty turbopack config to silence Next.js 16 warning (next-pwa uses webpack)
+  turbopack: {},
+
   // Image optimization configuration
   images: {
     formats: ['image/avif', 'image/webp'],
@@ -9,6 +14,34 @@ const nextConfig = {
     dangerouslyAllowSVG: true,
     contentDispositionType: 'attachment',
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    // Remote patterns for external images
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'fonts.gstatic.com',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn.trustindex.io',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'lh3.googleusercontent.com',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'unpkg.com',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'restaurantblackangus.com',
+        pathname: '/**',
+      },
+    ],
   },
 
   // Optimize build output
@@ -65,4 +98,77 @@ const nextConfig = {
   },
 };
 
-export default nextConfig;
+// PWA configuration for service worker and offline caching
+export default withPWA({
+  dest: 'public',
+  register: true,
+  skipWaiting: true,
+  disable: process.env.NODE_ENV === 'development',
+  cacheOnNavigation: true,
+  reloadOnOnline: true,
+  fallbacks: {
+    document: '/offline',
+  },
+  workboxOptions: {
+    runtimeCaching: [
+      {
+        urlPattern: /^https:\/\/fonts\.(?:gstatic)\.com\/.*/i,
+        handler: 'CacheFirst',
+        options: {
+          cacheName: 'google-fonts-cache',
+          expiration: {
+            maxEntries: 10,
+            maxAgeSeconds: 60 * 60 * 24 * 365, // 1 year
+          },
+          cacheableResponse: {
+            statuses: [0, 200],
+          },
+        },
+      },
+      {
+        urlPattern: /^https:\/\/cdn\.trustindex\.io\/.*/i,
+        handler: 'StaleWhileRevalidate',
+        options: {
+          cacheName: 'trustindex-cache',
+          expiration: {
+            maxEntries: 20,
+            maxAgeSeconds: 60 * 60 * 24 * 7, // 1 week
+          },
+        },
+      },
+      {
+        urlPattern: /^https:\/\/unpkg\.com\/.*/i,
+        handler: 'CacheFirst',
+        options: {
+          cacheName: 'unpkg-cache',
+          expiration: {
+            maxEntries: 30,
+            maxAgeSeconds: 60 * 60 * 24 * 365, // 1 year
+          },
+        },
+      },
+      {
+        urlPattern: /\.(?:png|jpg|jpeg|svg|gif|webp|avif)$/i,
+        handler: 'CacheFirst',
+        options: {
+          cacheName: 'image-cache',
+          expiration: {
+            maxEntries: 200,
+            maxAgeSeconds: 60 * 60 * 24 * 365, // 1 year
+          },
+        },
+      },
+      {
+        urlPattern: /\.(?:js|css)$/i,
+        handler: 'StaleWhileRevalidate',
+        options: {
+          cacheName: 'static-resources',
+          expiration: {
+            maxEntries: 50,
+            maxAgeSeconds: 60 * 60 * 24 * 30, // 30 days
+          },
+        },
+      },
+    ],
+  },
+})(nextConfig);
