@@ -1,19 +1,24 @@
 'use client';
 
-import { createContext, useState, useEffect, useContext } from 'react';
+import { createContext, useState, useEffect, useContext, useTransition } from 'react';
 import { translations } from '../translations';
 
 const LanguageContext = createContext();
 
 export function LanguageProvider({ children }) {
+  // Always start with 'fr' to match server-side rendering
   const [language, setLanguage] = useState('fr');
+  const [, startTransition] = useTransition();
 
   useEffect(() => {
-    // Load language preference from localStorage
-    const savedLanguage = localStorage.getItem('language');
-    if (savedLanguage && (savedLanguage === 'fr' || savedLanguage === 'en')) {
-      setLanguage(savedLanguage);
-    }
+    // Only after mounting (after hydration), check localStorage
+    // Use startTransition to mark this as a non-urgent update
+    startTransition(() => {
+      const savedLanguage = localStorage.getItem('language');
+      if (savedLanguage && (savedLanguage === 'fr' || savedLanguage === 'en')) {
+        setLanguage(savedLanguage);
+      }
+    });
   }, []);
 
   const handleLanguageChange = (lang) => {

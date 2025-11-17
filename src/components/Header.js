@@ -1,4 +1,6 @@
 import React from 'react'
+import Link from 'next/link'
+import Image from 'next/image'
 
 const Header = ({ language, handleLanguageChange, t }) => {
   return (
@@ -51,41 +53,21 @@ const Header = ({ language, handleLanguageChange, t }) => {
                   <figure className="breakdance-image breakdance-image--52">
                     <div className="breakdance-image-container">
                       <div className="breakdance-image-clip">
-                        <a
+                        <Link
                           className="breakdance-image-link breakdance-image-link--url"
                           href="/"
-                          target="_self"
                           rel="noopener"
                           data-sub-html=""
                           data-lg-size="-"
-                          ><img
-                            className="breakdance-image-object lazyload"
-                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAB08AAAI3AQAAAADbmi4tAAAAAnRSTlMAAHaTzTgAAACYSURBVHja7cExAQAAAMKg9U9tDB+gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADgYImwABA88t1gAAAABJRU5ErkJggg=="
-                            width="1871"
-                            height="567"
+                          ><Image
+                            className="breakdance-image-object"
+                            src="/wp-content/uploads/2025/01/black-angus-logo-sans-infos.png"
+                            width={1871}
+                            height={567}
                             alt="Black Angus Logo Sans Infos"
-                            data-src="https://restaurantblackangus.com/wp-content/uploads/2025/01/black-angus-logo-sans-infos.png"
-                            decoding="async"
-                            data-srcset="https://restaurantblackangus.com/wp-content/uploads/2025/01/black-angus-logo-sans-infos.png 1871w, https://restaurantblackangus.com/wp-content/uploads/2025/01/black-angus-logo-sans-infos-300x91.png 300w, https://restaurantblackangus.com/wp-content/uploads/2025/01/black-angus-logo-sans-infos-1024x310.png 1024w, https://restaurantblackangus.com/wp-content/uploads/2025/01/black-angus-logo-sans-infos-768x233.png 768w, https://restaurantblackangus.com/wp-content/uploads/2025/01/black-angus-logo-sans-infos-1536x465.png 1536w"
-                            data-sizes="auto"
-                            data-eio-rwidth="1871"
-                            data-eio-rheight="567" /><noscript
-                            ><img
-                              className="breakdance-image-object"
-                              src="wp-content/uploads/2025/01/black-angus-logo-sans-infos.png"
-                              width="1871"
-                              height="567"
-                              srcset="
-                                https://restaurantblackangus.com/wp-content/uploads/2025/01/black-angus-logo-sans-infos.png          1871w,
-                                https://restaurantblackangus.com/wp-content/uploads/2025/01/black-angus-logo-sans-infos-300x91.png    300w,
-                                https://restaurantblackangus.com/wp-content/uploads/2025/01/black-angus-logo-sans-infos-1024x310.png 1024w,
-                                https://restaurantblackangus.com/wp-content/uploads/2025/01/black-angus-logo-sans-infos-768x233.png   768w,
-                                https://restaurantblackangus.com/wp-content/uploads/2025/01/black-angus-logo-sans-infos-1536x465.png 1536w
-                              "
-                              sizes="(max-width: 1871px) 100vw, 1871px"
-                              alt="Black Angus Logo Sans Infos"
-                              data-eio="l" /></noscript
-                        ></a>
+                            priority
+                            sizes="(max-width: 1871px) 100vw, 1871px"
+                        /></Link>
                       </div>
                     </div>
                   </figure>
@@ -96,41 +78,21 @@ const Header = ({ language, handleLanguageChange, t }) => {
                   <figure className="breakdance-image breakdance-image--52">
                     <div className="breakdance-image-container">
                       <div className="breakdance-image-clip">
-                        <a
+                        <Link
                           className="breakdance-image-link breakdance-image-link--url"
                           href="/"
-                          target="_self"
                           rel="noopener"
                           data-sub-html=""
                           data-lg-size="-"
-                          ><img
-                            className="breakdance-image-object lazyload"
-                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAB08AAAI3AQAAAADbmi4tAAAAAnRSTlMAAHaTzTgAAACYSURBVHja7cExAQAAAMKg9U9tDB+gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADgYImwABA88t1gAAAABJRU5ErkJggg=="
-                            width="1871"
-                            height="567"
-                            alt="Black Angus Logo Sans Infos"
-                            data-src="https://restaurantblackangus.com/wp-content/uploads/2025/01/black-angus-logo-sans-infos.png"
-                            decoding="async"
-                            data-srcset="https://restaurantblackangus.com/wp-content/uploads/2025/01/black-angus-logo-sans-infos.png 1871w, https://restaurantblackangus.com/wp-content/uploads/2025/01/black-angus-logo-sans-infos-300x91.png 300w, https://restaurantblackangus.com/wp-content/uploads/2025/01/black-angus-logo-sans-infos-1024x310.png 1024w, https://restaurantblackangus.com/wp-content/uploads/2025/01/black-angus-logo-sans-infos-768x233.png 768w, https://restaurantblackangus.com/wp-content/uploads/2025/01/black-angus-logo-sans-infos-1536x465.png 1536w"
-                            data-sizes="auto"
-                            data-eio-rwidth="1871"
-                            data-eio-rheight="567" /><noscript
-                            ><img
-                              className="breakdance-image-object"
-                              src="wp-content/uploads/2025/01/black-angus-logo-sans-infos.png"
-                              width="1871"
-                              height="567"
-                              srcset="
-                                https://restaurantblackangus.com/wp-content/uploads/2025/01/black-angus-logo-sans-infos.png          1871w,
-                                https://restaurantblackangus.com/wp-content/uploads/2025/01/black-angus-logo-sans-infos-300x91.png    300w,
-                                https://restaurantblackangus.com/wp-content/uploads/2025/01/black-angus-logo-sans-infos-1024x310.png 1024w,
-                                https://restaurantblackangus.com/wp-content/uploads/2025/01/black-angus-logo-sans-infos-768x233.png   768w,
-                                https://restaurantblackangus.com/wp-content/uploads/2025/01/black-angus-logo-sans-infos-1536x465.png 1536w
-                              "
-                              sizes="(max-width: 1871px) 100vw, 1871px"
-                              alt="Black Angus Logo Sans Infos"
-                              data-eio="l" /></noscript
-                        ></a>
+                          ><Image
+                            className="breakdance-image-object"
+                            src="/wp-content/uploads/2025/01/black-angus-logo-sans-infos.png"
+                            width={251}
+                            height={27}
+                            alt="Black Angus Logo Sans Inf"
+                            priority
+                            
+                        /></Link>
                       </div>
                     </div>
                   </figure>
@@ -139,19 +101,19 @@ const Header = ({ language, handleLanguageChange, t }) => {
             </div>
             <div className="bde-div-130-110 bde-div">
               <div className="bde-button-130-111 bde-button booking-link">
-                <a
+                <Link
                   className="breakdance-link button-atom button-atom--custom bde-button__button"
                   href="/reservation"
-                  target="_self"
                   data-type="url"
                 >
                   <span className="button-atom__text">{t.book}</span>
-                </a>
+                </Link>
               </div>
               <div className="bde-div-130-121 bde-div">
                 <div className="bde-shortcode-130-120 bde-shortcode">
                   {/*Language Switcher*/}
                   <aside
+                    role="button"
                     data-wg-notranslate=""
                     className="country-selector weglot-dropdown close_outside_click closed weglot-shortcode wg-"
                     tabIndex="0"
@@ -178,11 +140,11 @@ const Header = ({ language, handleLanguageChange, t }) => {
                         className={`wg-li weglot-lang weglot-language weglot-flags flag-0 ${language === 'fr' ? 'wg-en' : 'wg-fr'}`}
                         data-code-language={language === 'fr' ? 'en' : 'fr'}
                         role="option"
+                        aria-selected="false"
                       >
                         <a
                           title={`Language switcher : ${language === 'fr' ? 'English' : 'French'}`}
                           className={`weglot-language-${language === 'fr' ? 'en' : 'fr'}`}
-                          role="option"
                           data-wg-notranslate=""
                           href="#"
                           onClick={(e) => {
@@ -206,14 +168,13 @@ const Header = ({ language, handleLanguageChange, t }) => {
       >
         <div className="bde-header-builder__container">
           <div className="bde-button-130-116 bde-button booking-link">
-            <a
+            <Link
               className="breakdance-link button-atom button-atom--custom bde-button__button"
               href="/reservation"
-              target="_self"
               data-type="url"
             >
               <span className="button-atom__text">{t.bookYourBlackAngus}</span>
-            </a>
+            </Link>
           </div>
         </div>
       </header>

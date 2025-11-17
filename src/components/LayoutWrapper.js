@@ -2,6 +2,7 @@
 
 import Header from './Header';
 import Footer from './Footer';
+import ScrollToTop from './ScrollToTop';
 import { LanguageProvider, useLanguage } from '../context/LanguageContext';
 
 function LayoutContent({ children }) {
@@ -9,6 +10,7 @@ function LayoutContent({ children }) {
 
   return (
     <>
+      <ScrollToTop />
       <Header language={language} handleLanguageChange={handleLanguageChange} t={t} />
       {children}
       <Footer t={t} />

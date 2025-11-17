@@ -1,4 +1,6 @@
 import React from 'react'
+import Image from 'next/image'
+import Link from 'next/link'
 
 const Footer = ({ t }) => {
   return (
@@ -16,7 +18,7 @@ const Footer = ({ t }) => {
             >
               <path
                 fill="currentColor"
-                fill-opacity="1"
+                fillOpacity="1"
                 d="M0,192L720,0L1440,160L1440,320L720,320L0,320Z"
               ></path>
             </svg>
@@ -27,41 +29,21 @@ const Footer = ({ t }) => {
             <figure className="breakdance-image breakdance-image--52">
               <div className="breakdance-image-container">
                 <div className="breakdance-image-clip">
-                  <a
+                  <Link
                     className="breakdance-image-link breakdance-image-link--url"
                     href="/"
-                    target="_self"
                     rel="noopener"
                     data-sub-html=""
                     data-lg-size="-"
-                    ><img
-                      className="breakdance-image-object lazyload"
-                      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAB08AAAI3AQAAAADbmi4tAAAAAnRSTlMAAHaTzTgAAACYSURBVHja7cExAQAAAMKg9U9tDB+gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADgYImwABA88t1gAAAABJRU5ErkJggg=="
-                      width="1871"
-                      height="567"
+                    ><Image
+                      src="/wp-content/uploads/2025/01/black-angus-logo-sans-infos.png"
                       alt="Black Angus Logo Sans Infos"
-                      data-src="https://restaurantblackangus.com/wp-content/uploads/2025/01/black-angus-logo-sans-infos.png"
-                      decoding="async"
-                      data-srcset="https://restaurantblackangus.com/wp-content/uploads/2025/01/black-angus-logo-sans-infos.png 1871w, https://restaurantblackangus.com/wp-content/uploads/2025/01/black-angus-logo-sans-infos-300x91.png 300w, https://restaurantblackangus.com/wp-content/uploads/2025/01/black-angus-logo-sans-infos-1024x310.png 1024w, https://restaurantblackangus.com/wp-content/uploads/2025/01/black-angus-logo-sans-infos-768x233.png 768w, https://restaurantblackangus.com/wp-content/uploads/2025/01/black-angus-logo-sans-infos-1536x465.png 1536w"
-                      data-sizes="auto"
-                      data-eio-rwidth="1871"
-                      data-eio-rheight="567" /><noscript
-                      ><img
-                        className="breakdance-image-object"
-                        src="wp-content/uploads/2025/01/black-angus-logo-sans-infos.png"
-                        width="1871"
-                        height="567"
-                        srcset="
-                          https://restaurantblackangus.com/wp-content/uploads/2025/01/black-angus-logo-sans-infos.png          1871w,
-                          https://restaurantblackangus.com/wp-content/uploads/2025/01/black-angus-logo-sans-infos-300x91.png    300w,
-                          https://restaurantblackangus.com/wp-content/uploads/2025/01/black-angus-logo-sans-infos-1024x310.png 1024w,
-                          https://restaurantblackangus.com/wp-content/uploads/2025/01/black-angus-logo-sans-infos-768x233.png   768w,
-                          https://restaurantblackangus.com/wp-content/uploads/2025/01/black-angus-logo-sans-infos-1536x465.png 1536w
-                        "
-                        sizes="(max-width: 1871px) 100vw, 1871px"
-                        alt="Black Angus Logo Sans Infos"
-                        data-eio="l" /></noscript
-                  ></a>
+                      width={1871}
+                      height={567}
+                      className="breakdance-image-object"
+                      loading="lazy"
+                      sizes="(max-width: 1871px) 100vw, 1871px"
+                  /></Link>
                 </div>
               </div>
             </figure>
@@ -110,26 +92,24 @@ const Footer = ({ t }) => {
               </a>
             </div>
             <div className="bde-button-42-114 bde-button booking-link">
-              <a
+              <Link
                 className="breakdance-link button-atom button-atom--custom bde-button__button"
                 href="/reservation"
-                target="_self"
                 data-type="url"
               >
                 <span className="button-atom__text">{t.reservation}</span>
-              </a>
+              </Link>
             </div>
           </div>
           <div className="bde-div-42-115 bde-div">
             <div className="bde-button-42-116 bde-button">
-              <a
+              <Link
                 className="breakdance-link button-atom button-atom--text bde-button__button"
                 href="/mentions-legales"
-                target="_self"
                 data-type="url"
               >
                 <span className="button-atom__text">{t.legalMentions}</span>
-              </a>
+              </Link>
             </div>
             <div className="bde-text-42-117 bde-text">
               {t.copyright}

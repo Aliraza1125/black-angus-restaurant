@@ -34,147 +34,118 @@ export default function RootLayout({ children }) {
         <link rel="alternate" href="https://restaurantblackangus.com/" hrefLang="fr" />
         <link rel="alternate" href="https://restaurantblackangus.com/en/" hrefLang="en" />
 
-        {/* Breakdance CSS */}
-        <link rel="stylesheet" href="/wp-content/plugins/breakdance/plugin/themeless/normalize.min.css" />
-        <link rel="stylesheet" href="/wp-content/plugins/breakdance/subplugins/breakdance-elements/dependencies-files/swiper@8/swiper-bundle.minc93c.css" />
-        <link rel="stylesheet" href="/wp-content/plugins/breakdance/subplugins/breakdance-elements/dependencies-files/swiper@8/breakdance-swiper-preset-defaultsc93c.css" />
-        <link rel="stylesheet" href="/wp-content/plugins/breakdance/subplugins/breakdance-elements/dependencies-files/lightgallery@2/css/lightgallery-bundle.minc93c.css" />
-
-        {/* Weglot CSS */}
-        <link rel="stylesheet" href="/wp-content/plugins/weglot/dist/css/front-css5fba.css" />
-        <link rel="stylesheet" href="/wp-content/plugins/weglot/dist/css/new-flags5fba.css" />
-
-        {/* Custom Breakdance CSS */}
-        <link rel="stylesheet" href="/wp-content/uploads/breakdance/css/post-130-defaultsdd34.css" />
-        <link rel="stylesheet" href="/wp-content/uploads/breakdance/css/post-769-defaults5052.css" />
-        <link rel="stylesheet" href="/wp-content/uploads/breakdance/css/post-46-defaults2603.css" />
-        <link rel="stylesheet" href="/wp-content/uploads/breakdance/css/post-42-defaults8ca6.css" />
-        <link rel="stylesheet" href="/wp-content/uploads/breakdance/css/post-255-defaultsd605.css" />
-        <link rel="stylesheet" href="/wp-content/uploads/breakdance/css/post-238-defaults620f.css" />
-        <link rel="stylesheet" href="/wp-content/uploads/breakdance/css/post-259-defaults8ca6.css" />
-        <link rel="stylesheet" href="/wp-content/uploads/breakdance/css/global-settings4311.css" />
-        <link rel="stylesheet" href="/wp-content/uploads/breakdance/css/presets795c.css" />
-        <link rel="stylesheet" href="/wp-content/uploads/breakdance/css/selectors08bd.css" />
-        <link rel="stylesheet" href="/wp-content/uploads/breakdance/css/post-130a8b0.css" />
-        <link rel="stylesheet" href="/wp-content/uploads/breakdance/css/post-769a441.css" />
-        <link rel="stylesheet" href="/wp-content/uploads/breakdance/css/post-4690c7.css" />
-        <link rel="stylesheet" href="/wp-content/uploads/breakdance/css/post-422053.css" />
-        <link rel="stylesheet" href="/wp-content/uploads/breakdance/css/post-255873b.css" />
-        <link rel="stylesheet" href="/wp-content/uploads/breakdance/css/post-2380ca2.css" />
-        <link rel="stylesheet" href="/wp-content/uploads/breakdance/css/post-259436e.css" />
-
         <style dangerouslySetInnerHTML={{__html: `
           @font-face {
             font-family: 'Antonio';
             font-style: normal;
             font-weight: 100;
             font-display: swap;
-            src: url(/fonts.gstatic.com/s/antonio/v22/gNMbW3NwSYq_9WD34ngK5F8vR8T0PVxx8BtI.ttf) format('truetype');
+            src: url(https://fonts.gstatic.com/s/antonio/v22/gNMbW3NwSYq_9WD34ngK5F8vR8T0PVxx8BtI.ttf) format('truetype');
           }
           @font-face {
             font-family: 'Antonio';
             font-style: normal;
             font-weight: 200;
             font-display: swap;
-            src: url(/fonts.gstatic.com/s/antonio/v22/gNMbW3NwSYq_9WD34ngK5F8vR8T0PVzx8RtI.ttf) format('truetype');
+            src: url(https://fonts.gstatic.com/s/antonio/v22/gNMbW3NwSYq_9WD34ngK5F8vR8T0PVzx8RtI.ttf) format('truetype');
           }
           @font-face {
             font-family: 'Antonio';
             font-style: normal;
             font-weight: 300;
             font-display: swap;
-            src: url(/fonts.gstatic.com/s/antonio/v22/gNMbW3NwSYq_9WD34ngK5F8vR8T0PVwv8RtI.ttf) format('truetype');
+            src: url(https://fonts.gstatic.com/s/antonio/v22/gNMbW3NwSYq_9WD34ngK5F8vR8T0PVwv8RtI.ttf) format('truetype');
           }
           @font-face {
             font-family: 'Antonio';
             font-style: normal;
             font-weight: 400;
             font-display: swap;
-            src: url(/fonts.gstatic.com/s/antonio/v22/gNMbW3NwSYq_9WD34ngK5F8vR8T0PVxx8RtI.ttf) format('truetype');
+            src: url(https://fonts.gstatic.com/s/antonio/v22/gNMbW3NwSYq_9WD34ngK5F8vR8T0PVxx8RtI.ttf) format('truetype');
           }
           @font-face {
             font-family: 'Antonio';
             font-style: normal;
             font-weight: 500;
             font-display: swap;
-            src: url(/fonts.gstatic.com/s/antonio/v22/gNMbW3NwSYq_9WD34ngK5F8vR8T0PVxD8RtI.ttf) format('truetype');
+            src: url(https://fonts.gstatic.com/s/antonio/v22/gNMbW3NwSYq_9WD34ngK5F8vR8T0PVxD8RtI.ttf) format('truetype');
           }
           @font-face {
             font-family: 'Antonio';
             font-style: normal;
             font-weight: 600;
             font-display: swap;
-            src: url(/fonts.gstatic.com/s/antonio/v22/gNMbW3NwSYq_9WD34ngK5F8vR8T0PVyv9htI.ttf) format('truetype');
+            src: url(https://fonts.gstatic.com/s/antonio/v22/gNMbW3NwSYq_9WD34ngK5F8vR8T0PVyv9htI.ttf) format('truetype');
           }
           @font-face {
             font-family: 'Antonio';
             font-style: normal;
             font-weight: 700;
             font-display: swap;
-            src: url(/fonts.gstatic.com/s/antonio/v22/gNMbW3NwSYq_9WD34ngK5F8vR8T0PVyW9htI.ttf) format('truetype');
+            src: url(https://fonts.gstatic.com/s/antonio/v22/gNMbW3NwSYq_9WD34ngK5F8vR8T0PVyW9htI.ttf) format('truetype');
           }
           @font-face {
             font-family: 'Outfit';
             font-style: normal;
             font-weight: 100;
             font-display: swap;
-            src: url(/fonts.gstatic.com/s/outfit/v15/QGYyz_MVcBeNP4NjuGObqx1XmO1I4TC0C4E.ttf) format('truetype');
+            src: url(https://fonts.gstatic.com/s/outfit/v15/QGYyz_MVcBeNP4NjuGObqx1XmO1I4TC0C4E.ttf) format('truetype');
           }
           @font-face {
             font-family: 'Outfit';
             font-style: normal;
             font-weight: 200;
             font-display: swap;
-            src: url(/fonts.gstatic.com/s/outfit/v15/QGYyz_MVcBeNP4NjuGObqx1XmO1I4bC1C4E.ttf) format('truetype');
+            src: url(https://fonts.gstatic.com/s/outfit/v15/QGYyz_MVcBeNP4NjuGObqx1XmO1I4bC1C4E.ttf) format('truetype');
           }
           @font-face {
             font-family: 'Outfit';
             font-style: normal;
             font-weight: 300;
             font-display: swap;
-            src: url(/fonts.gstatic.com/s/outfit/v15/QGYyz_MVcBeNP4NjuGObqx1XmO1I4W61C4E.ttf) format('truetype');
+            src: url(https://fonts.gstatic.com/s/outfit/v15/QGYyz_MVcBeNP4NjuGObqx1XmO1I4W61C4E.ttf) format('truetype');
           }
           @font-face {
             font-family: 'Outfit';
             font-style: normal;
             font-weight: 400;
             font-display: swap;
-            src: url(/fonts.gstatic.com/s/outfit/v15/QGYyz_MVcBeNP4NjuGObqx1XmO1I4TC1C4E.ttf) format('truetype');
+            src: url(https://fonts.gstatic.com/s/outfit/v15/QGYyz_MVcBeNP4NjuGObqx1XmO1I4TC1C4E.ttf) format('truetype');
           }
           @font-face {
             font-family: 'Outfit';
             font-style: normal;
             font-weight: 500;
             font-display: swap;
-            src: url(/fonts.gstatic.com/s/outfit/v15/QGYyz_MVcBeNP4NjuGObqx1XmO1I4QK1C4E.ttf) format('truetype');
+            src: url(https://fonts.gstatic.com/s/outfit/v15/QGYyz_MVcBeNP4NjuGObqx1XmO1I4QK1C4E.ttf) format('truetype');
           }
           @font-face {
             font-family: 'Outfit';
             font-style: normal;
             font-weight: 600;
             font-display: swap;
-            src: url(/fonts.gstatic.com/s/outfit/v15/QGYyz_MVcBeNP4NjuGObqx1XmO1I4e6yC4E.ttf) format('truetype');
+            src: url(https://fonts.gstatic.com/s/outfit/v15/QGYyz_MVcBeNP4NjuGObqx1XmO1I4e6yC4E.ttf) format('truetype');
           }
           @font-face {
             font-family: 'Outfit';
             font-style: normal;
             font-weight: 700;
             font-display: swap;
-            src: url(/fonts.gstatic.com/s/outfit/v15/QGYyz_MVcBeNP4NjuGObqx1XmO1I4deyC4E.ttf) format('truetype');
+            src: url(https://fonts.gstatic.com/s/outfit/v15/QGYyz_MVcBeNP4NjuGObqx1XmO1I4deyC4E.ttf) format('truetype');
           }
           @font-face {
             font-family: 'Outfit';
             font-style: normal;
             font-weight: 800;
             font-display: swap;
-            src: url(/fonts.gstatic.com/s/outfit/v15/QGYyz_MVcBeNP4NjuGObqx1XmO1I4bCyC4E.ttf) format('truetype');
+            src: url(https://fonts.gstatic.com/s/outfit/v15/QGYyz_MVcBeNP4NjuGObqx1XmO1I4bCyC4E.ttf) format('truetype');
           }
           @font-face {
             font-family: 'Outfit';
             font-style: normal;
             font-weight: 900;
             font-display: swap;
-            src: url(/fonts.gstatic.com/s/outfit/v15/QGYyz_MVcBeNP4NjuGObqx1XmO1I4ZmyC4E.ttf) format('truetype');
+            src: url(https://fonts.gstatic.com/s/outfit/v15/QGYyz_MVcBeNP4NjuGObqx1XmO1I4ZmyC4E.ttf) format('truetype');
           }
           img:is([sizes="auto" i], [sizes^="auto," i]) {
             contain-intrinsic-size: 3000px 1500px;
@@ -192,22 +163,23 @@ export default function RootLayout({ children }) {
           {children}
         </LayoutWrapper>
 
-        {/* JavaScript files */}
+        {/* JavaScript files - Critical scripts load first */}
         <Script src="/wp-content/plugins/weglot/dist/front-js5fba.js" strategy="afterInteractive" />
-        <Script src="/wp-content/plugins/ewww-image-optimizer/includes/lazysizes.minc299.js" strategy="afterInteractive" />
         <Script src="/wp-content/plugins/breakdance/plugin/global-scripts/breakdance-utilsc93c.js" strategy="afterInteractive" />
         <Script src="/wp-content/plugins/breakdance/subplugins/breakdance-elements/dependencies-files/breakdance-header-builder@1/header-builderc93c.js" strategy="afterInteractive" />
-        <Script src="/wp-content/plugins/breakdance/subplugins/breakdance-elements/dependencies-files/swiper@8/swiper-bundle.minc93c.js" strategy="afterInteractive" />
-        <Script src="/wp-content/plugins/breakdance/subplugins/breakdance-elements/dependencies-files/breakdance-swiper/breakdance-swiperc93c.js" strategy="afterInteractive" />
-        <Script src="/wp-content/plugins/breakdance/subplugins/breakdance-elements/dependencies-files/isotope-layout@3.0.6/isotope.pkgd.minc93c.js" strategy="afterInteractive" />
-        <Script src="/wp-content/plugins/breakdance/subplugins/breakdance-elements/dependencies-files/lightgallery@2/lightgallery-bundle.minc93c.js" strategy="afterInteractive" />
-        <Script src="/wp-content/plugins/breakdance/subplugins/breakdance-elements/dependencies-files/elements-reusable-code/lightboxc93c.js" strategy="afterInteractive" />
-        <Script src="/wp-content/plugins/breakdance/subplugins/breakdance-elements/dependencies-files/breakdance-gallery@1/galleryc93c.js" strategy="afterInteractive" />
-        <Script src="/wp-content/plugins/breakdance/subplugins/breakdance-elements/dependencies-files/imagesloaded@4/imagesloaded.pkgd.minc93c.js" strategy="afterInteractive" />
-        <Script src="/wp-content/plugins/breakdance/plugin/animations/scrolling/js/blur-pluginc93c.js" strategy="afterInteractive" />
-        <Script src="/wp-content/plugins/breakdance/plugin/animations/scrolling/js/parallaxc93c.js" strategy="afterInteractive" />
-        <Script src="https://unpkg.com/gsap@3.12.2/dist/gsap.min.js" strategy="afterInteractive" />
-        <Script src="https://unpkg.com/gsap@3.12.2/dist/ScrollTrigger.min.js" strategy="afterInteractive" />
+
+        {/* Non-critical scripts load lazily for better performance */}
+        <Script src="/wp-content/plugins/breakdance/subplugins/breakdance-elements/dependencies-files/swiper@8/swiper-bundle.minc93c.js" strategy="lazyOnload" />
+        <Script src="/wp-content/plugins/breakdance/subplugins/breakdance-elements/dependencies-files/breakdance-swiper/breakdance-swiperc93c.js" strategy="lazyOnload" />
+        <Script src="/wp-content/plugins/breakdance/subplugins/breakdance-elements/dependencies-files/isotope-layout@3.0.6/isotope.pkgd.minc93c.js" strategy="lazyOnload" />
+        <Script src="/wp-content/plugins/breakdance/subplugins/breakdance-elements/dependencies-files/lightgallery@2/lightgallery-bundle.minc93c.js" strategy="lazyOnload" />
+        <Script src="/wp-content/plugins/breakdance/subplugins/breakdance-elements/dependencies-files/elements-reusable-code/lightboxc93c.js" strategy="lazyOnload" />
+        <Script src="/wp-content/plugins/breakdance/subplugins/breakdance-elements/dependencies-files/breakdance-gallery@1/galleryc93c.js" strategy="lazyOnload" />
+        <Script src="/wp-content/plugins/breakdance/subplugins/breakdance-elements/dependencies-files/imagesloaded@4/imagesloaded.pkgd.minc93c.js" strategy="lazyOnload" />
+        <Script src="/wp-content/plugins/breakdance/plugin/animations/scrolling/js/blur-pluginc93c.js" strategy="lazyOnload" />
+        <Script src="/wp-content/plugins/breakdance/plugin/animations/scrolling/js/parallaxc93c.js" strategy="lazyOnload" />
+        <Script src="https://unpkg.com/gsap@3.12.2/dist/gsap.min.js" strategy="lazyOnload" />
+        <Script src="https://unpkg.com/gsap@3.12.2/dist/ScrollTrigger.min.js" strategy="lazyOnload" />
       </body>
     </html>
   );

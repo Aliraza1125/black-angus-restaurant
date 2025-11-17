@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useLanguage } from '../../context/LanguageContext';
 
 export default function Reservation() {
@@ -60,32 +61,15 @@ export default function Reservation() {
               </div>
             </div>
             <div className="bde-column-238-104 bde-column">
-              <img
-                decoding="async"
-                className="bde-image2-238-106 bde-image2 lazyload"
-                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABTUAAAeAAQAAAAA3ao7XAAAAAnRSTlMAAHaTzTgAAAFPSURBVHja7cExAQAAAMKg9U9tB2+gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4DfsPAABv1iGcAAAAABJRU5ErkJggg=="
+              <Image
+                className="bde-image2-238-106 bde-image2"
+                src="/wp-content/uploads/2025/01/Restaurant-black-angus-grande-salle-paris.jpg"
                 alt={t.reservationImageAlt}
+                width={1333}
+                height={2000}
                 loading="lazy"
-                data-src="https://restaurantblackangus.com/wp-content/uploads/2025/01/Restaurant-black-angus-grande-salle-paris.jpg"
-                data-srcset="https://restaurantblackangus.com/wp-content/uploads/2025/01/Restaurant-black-angus-grande-salle-paris.jpg 1333w, https://restaurantblackangus.com/wp-content/uploads/2025/01/Restaurant-black-angus-grande-salle-paris-200x300.jpg 200w, https://restaurantblackangus.com/wp-content/uploads/2025/01/Restaurant-black-angus-grande-salle-paris-682x1024.jpg 682w, https://restaurantblackangus.com/wp-content/uploads/2025/01/Restaurant-black-angus-grande-salle-paris-768x1152.jpg 768w, https://restaurantblackangus.com/wp-content/uploads/2025/01/Restaurant-black-angus-grande-salle-paris-1024x1536.jpg 1024w"
-                data-sizes="auto"
-                width="1333"
-                height="2000"
-                data-eio-rwidth="1333"
-                data-eio-rheight="2000"
+                sizes="(max-width: 1333px) 100vw, 1333px"
               />
-              <noscript>
-                <img
-                  decoding="async"
-                  className="bde-image2-238-106 bde-image2"
-                  src="/wp-content/uploads/2025/01/Restaurant-black-angus-grande-salle-paris.jpg"
-                  alt={t.reservationImageAlt}
-                  loading="lazy"
-                  srcSet="https://restaurantblackangus.com/wp-content/uploads/2025/01/Restaurant-black-angus-grande-salle-paris.jpg 1333w, https://restaurantblackangus.com/wp-content/uploads/2025/01/Restaurant-black-angus-grande-salle-paris-200x300.jpg 200w, https://restaurantblackangus.com/wp-content/uploads/2025/01/Restaurant-black-angus-grande-salle-paris-682x1024.jpg 682w, https://restaurantblackangus.com/wp-content/uploads/2025/01/Restaurant-black-angus-grande-salle-paris-768x1152.jpg 768w, https://restaurantblackangus.com/wp-content/uploads/2025/01/Restaurant-black-angus-grande-salle-paris-1024x1536.jpg 1024w"
-                  sizes="(max-width: 1333px) 100vw, 1333px"
-                  data-eio="l"
-                />
-              </noscript>
             </div>
           </div>
         </div>

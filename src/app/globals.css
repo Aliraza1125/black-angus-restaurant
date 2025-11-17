@@ -1,5 +1,34 @@
 @import "tailwindcss";
 
+/* Breakdance Plugin CSS */
+@import './wp-content/plugins/breakdance/plugin/themeless/normalize.min.css';
+@import './wp-content/plugins/breakdance/subplugins/breakdance-elements/dependencies-files/swiper@8/swiper-bundle.minc93c.css';
+@import './wp-content/plugins/breakdance/subplugins/breakdance-elements/dependencies-files/swiper@8/breakdance-swiper-preset-defaultsc93c.css';
+@import './wp-content/plugins/breakdance/subplugins/breakdance-elements/dependencies-files/lightgallery@2/css/lightgallery-bundle.minc93c.css';
+
+/* Weglot Plugin CSS */
+@import './wp-content/plugins/weglot/dist/css/front-css5fba.css';
+@import './wp-content/plugins/weglot/dist/css/new-flags5fba.css';
+
+/* Custom Breakdance CSS */
+@import './wp-content/uploads/breakdance/css/post-130-defaultsdd34.css';
+@import './wp-content/uploads/breakdance/css/post-769-defaults5052.css';
+@import './wp-content/uploads/breakdance/css/post-46-defaults2603.css';
+@import './wp-content/uploads/breakdance/css/post-42-defaults8ca6.css';
+@import './wp-content/uploads/breakdance/css/post-255-defaultsd605.css';
+@import './wp-content/uploads/breakdance/css/post-238-defaults620f.css';
+@import './wp-content/uploads/breakdance/css/post-259-defaults8ca6.css';
+@import './wp-content/uploads/breakdance/css/global-settings4311.css';
+@import './wp-content/uploads/breakdance/css/presets795c.css';
+@import './wp-content/uploads/breakdance/css/selectors08bd.css';
+@import './wp-content/uploads/breakdance/css/post-130a8b0.css';
+@import './wp-content/uploads/breakdance/css/post-769a441.css';
+@import './wp-content/uploads/breakdance/css/post-4690c7.css';
+@import './wp-content/uploads/breakdance/css/post-422053.css';
+@import './wp-content/uploads/breakdance/css/post-255873b.css';
+@import './wp-content/uploads/breakdance/css/post-2380ca2.css';
+@import './wp-content/uploads/breakdance/css/post-259436e.css';
+
 :root {
   --background: #ffffff;
   --foreground: #171717;

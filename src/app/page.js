@@ -1,27 +1,12 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { translations } from "../translations";
+import { useLanguage } from "../context/LanguageContext";
 
 export default function Home() {
-  const [language, setLanguage] = useState(() => {
-    // Load language preference from localStorage during initialization
-    if (typeof window !== 'undefined') {
-      const savedLanguage = localStorage.getItem("language");
-      if (savedLanguage && (savedLanguage === "fr" || savedLanguage === "en")) {
-        return savedLanguage;
-      }
-    }
-    return "fr";
-  });
-  const t = translations[language];
-
-  const handleLanguageChange = (lang) => {
-    setLanguage(lang);
-    localStorage.setItem("language", lang);
-  };
+  const { t } = useLanguage();
 
   useEffect(() => {
     // Initialize gallery and other interactive elements
