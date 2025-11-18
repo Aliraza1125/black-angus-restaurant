@@ -1,214 +1,167 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 export default function GalleryScripts() {
+  const initializedRef = useRef(false);
+  const retryCountRef = useRef(0);
+  const maxRetries = 20; // Max attempts to wait for Breakdance to load
+  const retryDelay = 200; // ms
+
   useEffect(() => {
-    // Initialize gallery and other interactive elements
-    document.addEventListener("DOMContentLoaded", function () {
-      if (!window.BreakdanceFrontend) {
-        window.BreakdanceFrontend = {};
-      }
+    if (typeof window === "undefined") return;
 
-      window.BreakdanceFrontend.data = {
-        homeUrl: "https://restaurantblackangus.com",
-        ajaxUrl: "https://restaurantblackangus.com/wp-admin/admin-ajax.php",
-        elementsPluginUrl:
-          "https://restaurantblackangus.com/wp-content/plugins/breakdance/subplugins/breakdance-elements/",
-        BASE_BREAKPOINT_ID: "breakpoint_base",
-        breakpoints: [
-          {
-            id: "breakpoint_base",
-            label: "Desktop",
-            defaultPreviewWidth: "100%",
-          },
-          {
-            id: "breakpoint_tablet_landscape",
-            label: "Tablet Landscape",
-            defaultPreviewWidth: 1024,
-            maxWidth: 1119,
-          },
-          {
-            id: "breakpoint_tablet_portrait",
-            label: "Tablet Portrait",
-            defaultPreviewWidth: 768,
-            maxWidth: 1023,
-          },
-          {
-            id: "breakpoint_phone_landscape",
-            label: "Phone Landscape",
-            defaultPreviewWidth: 480,
-            maxWidth: 767,
-          },
-          {
-            id: "breakpoint_phone_portrait",
-            label: "Phone Portrait",
-            defaultPreviewWidth: 400,
-            maxWidth: 479,
-          },
-        ],
-        subscriptionMode: "pro",
-      };
-    });
+    // Only run on pages with .breakdance class (Home page)
+    const breakdanceElements = document.querySelectorAll(".breakdance");
+    if (breakdanceElements.length === 0) return;
 
-    // Initialize all Breakdance components
-    const initializeBreakdanceComponents = () => {
-      // Header builders
-      if (typeof BreakdanceHeaderBuilder !== 'undefined') {
-        new BreakdanceHeaderBuilder(".breakdance .bde-header-builder-130-100", "100", false);
-        new BreakdanceHeaderBuilder(".breakdance .bde-header-builder-130-115", "115", false);
-      }
-
-      // Initialize all galleries with their swipers
-      if (window.BreakdanceSwiper && window.BreakdanceSwiper()) {
-        const galleryConfigs = [
-          { id: "bde-gallery-769-110", selector: ".breakdance .bde-gallery-769-110", autoHeight: true, speed: 600 },
-          { id: "bde-gallery-769-301", selector: ".breakdance .bde-gallery-769-301", autoHeight: false, speed: 600 },
-          { id: "bde-gallery-769-115", selector: ".breakdance .bde-gallery-769-115", autoHeight: false, speed: 800 },
-          { id: "bde-gallery-769-117", selector: ".breakdance .bde-gallery-769-117", autoHeight: false, speed: 1000, centerSlides: true },
-          { id: "bde-gallery-769-290", selector: ".breakdance .bde-gallery-769-290", autoHeight: true, speed: 600 },
-          { id: "bde-gallery-769-293", selector: ".breakdance .bde-gallery-769-293", autoHeight: false, speed: 600 },
-          { id: "bde-gallery-769-295", selector: ".breakdance .bde-gallery-769-295", autoHeight: false, speed: 800 },
-          { id: "bde-gallery-769-297", selector: ".breakdance .bde-gallery-769-297", autoHeight: false, speed: 1000, centerSlides: true },
-        ];
-
-        galleryConfigs.forEach(config => {
-          window.BreakdanceSwiper().update({
-            id: config.id,
-            selector: config.selector,
-            settings: {
-              advanced: {
-                slides_per_view: { breakpoint_base: 1 },
-                one_per_view_at: "breakpoint_phone_landscape",
-                slides_per_group: { breakpoint_base: 3 },
-                swipe_on_scroll: false,
-                auto_height: config.autoHeight,
-                between_slides: { breakpoint_base: null },
-              },
-              infinite: "enabled",
-              autoplay: "enabled",
-              speed: { number: 1000, unit: "ms", style: "1000ms" },
-              effect: "fade",
-              ...(config.centerSlides && { center_slides: true }),
-              autoplay_settings: {
-                speed: { number: config.speed, unit: "ms", style: `${config.speed}ms` },
-                ...(config.autoHeight && { stop_on_interaction: false, pause_on_hover: true }),
-              },
-            },
-            paginationSettings: { type: "none" },
-          });
-        });
-      }
-
-      // Initialize lightboxes
-      if (typeof BreakdanceLightbox !== 'undefined') {
-        const lightboxSelectors = [
-          ".breakdance .bde-gallery-769-110",
-          ".breakdance .bde-gallery-769-301",
-          ".breakdance .bde-gallery-769-115",
-          ".breakdance .bde-gallery-769-117",
-          ".breakdance .bde-gallery-769-290",
-          ".breakdance .bde-gallery-769-293",
-          ".breakdance .bde-gallery-769-295",
-          ".breakdance .bde-gallery-769-297",
-        ];
-
-        const lightboxConfig = {
-          thumbnails: true,
-          animated_thumbnails: false,
-          zoom: true,
-          autoplay: false,
-          background: "#000000",
-          controls: "#999999",
-          thumbnail: "#ffffff",
-          thumbnail_active: "#01d2e8f0",
-          autoplay_videos: false,
+    // Function to ensure BreakdanceFrontend.data exists
+    const ensureBreakdanceFrontendData = () => {
+      if (!window.BreakdanceFrontend) window.BreakdanceFrontend = {};
+      if (!window.BreakdanceFrontend.data) {
+        window.BreakdanceFrontend.data = {
+          homeUrl: "https://restaurantblackangus.com",
+          ajaxUrl: "https://restaurantblackangus.com/wp-admin/admin-ajax.php",
+          elementsPluginUrl:
+            "https://restaurantblackangus.com/wp-content/plugins/breakdance/subplugins/breakdance-elements/",
+          
+          breakpoints: [
+            { id: "breakpoint_base", label: "Desktop", defaultPreviewWidth: "100%" },
+            { id: "breakpoint_tablet_landscape", label: "Tablet Landscape", defaultPreviewWidth: 1024, maxWidth: 1119 },
+            { id: "breakpoint_tablet_portrait", label: "Tablet Portrait", defaultPreviewWidth: 768, maxWidth: 1023 },
+            { id: "breakpoint_phone_landscape", label: "Phone Landscape", defaultPreviewWidth: 480, maxWidth: 767 },
+            { id: "breakpoint_phone_portrait", label: "Phone Portrait", defaultPreviewWidth: 400, maxWidth: 479 },
+          ],
+          subscriptionMode: "pro",
         };
+      }
+      return !!window.BreakdanceFrontend.data?.BASE_BREAKPOINT_ID;
+    };
 
-        lightboxSelectors.forEach(selector => {
-          new BreakdanceLightbox(selector, {
-            itemSelector: ".ee-gallery-item",
-            ...lightboxConfig,
-          });
-        });
+    // Initialize all Breakdance components safely
+    const initializeBreakdanceComponents = () => {
+      if (initializedRef.current) return; // Prevent multiple runs
+
+      // STOP if Breakdance is not ready
+      if (!ensureBreakdanceFrontendData()) {
+        retryCountRef.current += 1;
+        if (retryCountRef.current <= maxRetries) {
+          setTimeout(initializeBreakdanceComponents, retryDelay);
+        } else {
+          console.error("BreakdanceFrontend.data not ready after max retries");
+        }
+        return;
       }
 
-      // Initialize galleries
-      if (typeof BreakdanceGallery !== 'undefined') {
-        const galleryElements = [
-          { selector: ".breakdance .bde-gallery-769-110", autoHeight: true, speed: 600 },
-          { selector: ".breakdance .bde-gallery-769-301", autoHeight: false, speed: 600 },
-          { selector: ".breakdance .bde-gallery-769-115", autoHeight: false, speed: 800 },
-          { selector: ".breakdance .bde-gallery-769-117", autoHeight: false, speed: 1000, centerSlides: true },
-          { selector: ".breakdance .bde-gallery-769-290", autoHeight: true, speed: 600 },
-          { selector: ".breakdance .bde-gallery-769-293", autoHeight: false, speed: 600 },
-          { selector: ".breakdance .bde-gallery-769-295", autoHeight: false, speed: 800 },
-          { selector: ".breakdance .bde-gallery-769-297", autoHeight: false, speed: 1000, centerSlides: true },
-        ];
+      // Mark as initialized
+      initializedRef.current = true;
 
-        galleryElements.forEach(gallery => {
-          new BreakdanceGallery(gallery.selector, {
-            type: "slider",
-            gap: { breakpoint_base: { number: 10, unit: "px", style: "10px" } },
-            columns: { breakpoint_base: 3, breakpoint_phone_portrait: 1 },
-            aspect_ratio: "100%",
-            slider: {
-              settings: {
-                advanced: {
-                  slides_per_view: { breakpoint_base: 1 },
-                  one_per_view_at: "breakpoint_phone_landscape",
-                  slides_per_group: { breakpoint_base: 3 },
-                  swipe_on_scroll: false,
-                  auto_height: gallery.autoHeight,
-                  between_slides: { breakpoint_base: null },
-                },
-                infinite: "enabled",
-                autoplay: "enabled",
-                speed: { number: 1000, unit: "ms", style: "1000ms" },
-                effect: "fade",
-                ...(gallery.centerSlides && { center_slides: true }),
-                autoplay_settings: {
-                  speed: { number: gallery.speed, unit: "ms", style: `${gallery.speed}ms` },
-                  ...(gallery.autoHeight && { stop_on_interaction: false, pause_on_hover: true }),
-                },
-              },
-              arrows: { disable: true },
-              pagination: { type: "none" },
-            },
-            slider_images: {
-              aspect_ratio: "0",
-              width: { breakpoint_base: { number: 100, unit: "%", style: "100%" } },
-              height: gallery.autoHeight
-                ? { breakpoint_phone_portrait: { number: 525, unit: "px", style: "525px" } }
-                : { breakpoint_base: { number: 525, unit: "px", style: "525px" } },
-            },
-            width: { breakpoint_base: { number: 100, unit: "%", style: "100%" } },
-            mode: null,
+      try {
+        // Header Builders
+        if (typeof BreakdanceHeaderBuilder !== "undefined") {
+          [".bde-header-builder-130-100", ".bde-header-builder-130-115"].forEach((sel) => {
+            const el = document.querySelector(`.breakdance ${sel}`);
+            if (el) new BreakdanceHeaderBuilder(`.breakdance ${sel}`, el.dataset.id || "100", false);
           });
-        });
-      }
+        }
 
-      // Initialize parallax
-      if (typeof BreakdanceParallax !== 'undefined') {
-        new BreakdanceParallax(".breakdance .bde-image-769-308", {
-          enabled: true,
-          scale: { end: null, start: null, middle: null },
-        });
+        // Swipers / Galleries
+        if (typeof window.BreakdanceSwiper === "function") {
+          const galleryConfigs = [
+            { selector: ".bde-gallery-769-110", autoHeight: true, speed: 600 },
+            { selector: ".bde-gallery-769-301", autoHeight: false, speed: 600 },
+            { selector: ".bde-gallery-769-115", autoHeight: false, speed: 800 },
+            { selector: ".bde-gallery-769-117", autoHeight: false, speed: 1000, centerSlides: true },
+            { selector: ".bde-gallery-769-290", autoHeight: true, speed: 600 },
+            { selector: ".bde-gallery-769-293", autoHeight: false, speed: 600 },
+            { selector: ".bde-gallery-769-295", autoHeight: false, speed: 800 },
+            { selector: ".bde-gallery-769-297", autoHeight: false, speed: 1000, centerSlides: true },
+          ];
+
+          galleryConfigs.forEach((config) => {
+            const el = document.querySelector(`.breakdance ${config.selector}`);
+            if (el) {
+              window.BreakdanceSwiper().update({
+                id: el.id,
+                selector: `.breakdance ${config.selector}`,
+                settings: {
+                  advanced: {
+                    slides_per_view: { breakpoint_base: 1 },
+                    one_per_view_at: "breakpoint_phone_landscape",
+                    slides_per_group: { breakpoint_base: 3 },
+                    swipe_on_scroll: false,
+                    auto_height: config.autoHeight,
+                  },
+                  infinite: "enabled",
+                  autoplay: "enabled",
+                  speed: { number: config.speed, unit: "ms", style: `${config.speed}ms` },
+                  ...(config.centerSlides && { center_slides: true }),
+                },
+                paginationSettings: { type: "none" },
+              });
+            }
+          });
+        }
+
+        // Lightboxes
+        if (typeof BreakdanceLightbox !== "undefined") {
+          const lightboxSelectors = [
+            ".bde-gallery-769-110",
+            ".bde-gallery-769-301",
+            ".bde-gallery-769-115",
+            ".bde-gallery-769-117",
+            ".bde-gallery-769-290",
+            ".bde-gallery-769-293",
+            ".bde-gallery-769-295",
+            ".bde-gallery-769-297",
+          ];
+          lightboxSelectors.forEach((sel) => {
+            const el = document.querySelector(`.breakdance ${sel}`);
+            if (el) {
+              new BreakdanceLightbox(`.breakdance ${sel}`, {
+                itemSelector: ".ee-gallery-item",
+                thumbnails: true,
+                animated_thumbnails: false,
+                zoom: true,
+                autoplay: false,
+                background: "#000000",
+                controls: "#999999",
+                thumbnail: "#ffffff",
+                thumbnail_active: "#01d2e8f0",
+                autoplay_videos: false,
+              });
+            }
+          });
+        }
+
+        // Parallax
+        if (typeof BreakdanceParallax !== "undefined") {
+          const parallaxEl = document.querySelector(".breakdance .bde-image-769-308");
+          if (parallaxEl) {
+            new BreakdanceParallax(parallaxEl, { enabled: true });
+          }
+        }
+      } catch (error) {
+        console.error("Error initializing Breakdance components:", error);
       }
     };
 
-    // Run initialization when DOM is ready
-    if (document.readyState === 'loading') {
-      document.addEventListener("DOMContentLoaded", initializeBreakdanceComponents);
-    } else {
-      // DOM already loaded
-      initializeBreakdanceComponents();
-    }
+    // Start initialization with a small delay
+    const initTimer = setTimeout(() => {
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initializeBreakdanceComponents);
+      } else {
+        initializeBreakdanceComponents();
+      }
+    }, 100);
 
     return () => {
+      clearTimeout(initTimer);
       document.removeEventListener("DOMContentLoaded", initializeBreakdanceComponents);
+      initializedRef.current = false;
+      retryCountRef.current = 0;
     };
   }, []);
 
-  return null; // This component doesn't render anything
+  return null;
 }
