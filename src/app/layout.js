@@ -38,36 +38,60 @@ export default function RootLayout({ children }) {
   return (
     <html lang="fr-FR" className={`${antonio.variable} ${outfit.variable}`}>
       <head>
+
+        {/* ✅ Google Tag Manager – must be highest in head */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://analytics.restaurantblackangus.com/gmmwbh05kssnwvn.js?awl='+i.replace(/^GTM-/, '')+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-57RHP55Z');`,
+          }}
+        />
+
         <link rel="canonical" href="https://restaurantblackangus.com/" />
         <link rel="alternate" href="https://restaurantblackangus.com/" hrefLang="fr" />
         <link rel="alternate" href="https://restaurantblackangus.com/en/" hrefLang="en" />
 
-        <style dangerouslySetInnerHTML={{__html: `
-          /* next/font automatically optimizes Antonio and Outfit fonts */
-          /* Fonts now self-hosted and cached for better performance */
-
-          img:is([sizes="auto" i], [sizes^="auto," i]) {
-            contain-intrinsic-size: 3000px 1500px;
-          }
-          .lazyload { background-image: none !important; }
-          .lazyload:before { background-image: none !important; }
-          .country-selector.weglot-dropdown .wgcurrent a,
-          .country-selector.weglot-dropdown .wgcurrent span {
-            padding-right: 20px;
-          }
-        `}} />
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `
+              img:is([sizes="auto" i], [sizes^="auto," i]) {
+                contain-intrinsic-size: 3000px 1500px;
+              }
+              .lazyload { background-image: none !important; }
+              .lazyload:before { background-image: none !important; }
+              .country-selector.weglot-dropdown .wgcurrent a,
+              .country-selector.weglot-dropdown .wgcurrent span {
+                padding-right: 20px;
+              }
+            `,
+          }}
+        />
       </head>
+
       <body className="wp-singular page-template-default page wp-theme-breakdance-zero-theme breakdance">
+
+        {/* ✅ Google Tag Manager (noscript) – must appear immediately after <body> */}
+        <noscript>
+          <iframe
+            src="https://analytics.restaurantblackangus.com/ns.html?id=GTM-57RHP55Z"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          ></iframe>
+        </noscript>
+
         <LayoutWrapper>
           {children}
         </LayoutWrapper>
 
-        {/* JavaScript files - Critical scripts load first */}
+        {/* JavaScript files */}
         <Script src="/wp-content/plugins/weglot/dist/front-js5fba.js" strategy="afterInteractive" />
         <Script src="/wp-content/plugins/breakdance/plugin/global-scripts/breakdance-utilsc93c.js" strategy="afterInteractive" />
         <Script src="/wp-content/plugins/breakdance/subplugins/breakdance-elements/dependencies-files/breakdance-header-builder@1/header-builderc93c.js" strategy="afterInteractive" />
 
-        {/* Non-critical scripts load lazily for better performance */}
         <Script src="/wp-content/plugins/breakdance/subplugins/breakdance-elements/dependencies-files/swiper@8/swiper-bundle.minc93c.js" strategy="lazyOnload" />
         <Script src="/wp-content/plugins/breakdance/subplugins/breakdance-elements/dependencies-files/breakdance-swiper/breakdance-swiperc93c.js" strategy="lazyOnload" />
         <Script src="/wp-content/plugins/breakdance/subplugins/breakdance-elements/dependencies-files/isotope-layout@3.0.6/isotope.pkgd.minc93c.js" strategy="lazyOnload" />
@@ -77,7 +101,7 @@ export default function RootLayout({ children }) {
         <Script src="/wp-content/plugins/breakdance/subplugins/breakdance-elements/dependencies-files/imagesloaded@4/imagesloaded.pkgd.minc93c.js" strategy="lazyOnload" />
         <Script src="/wp-content/plugins/breakdance/plugin/animations/scrolling/js/blur-pluginc93c.js" strategy="lazyOnload" />
         <Script src="/wp-content/plugins/breakdance/plugin/animations/scrolling/js/parallaxc93c.js" strategy="lazyOnload" />
-        {/* External CDN scripts with crossOrigin for better caching */}
+
         <Script src="https://unpkg.com/gsap@3.12.2/dist/gsap.min.js" strategy="lazyOnload" crossOrigin="anonymous" />
         <Script src="https://unpkg.com/gsap@3.12.2/dist/ScrollTrigger.min.js" strategy="lazyOnload" crossOrigin="anonymous" />
         <Script src="https://cdn.trustindex.io/loader.js" strategy="lazyOnload" crossOrigin="anonymous" />

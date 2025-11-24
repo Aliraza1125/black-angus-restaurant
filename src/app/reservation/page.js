@@ -6,6 +6,12 @@ import { useLanguage } from '../../context/LanguageContext';
 export default function Reservation() {
   const { t } = useLanguage();
 
+  // ------------ Tracking handler -------------
+  const trackReservationClick = () => {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: "Clic_reservation" });
+  };
+
   return (
     <div className="breakdance">
       <section className="bde-section-238-100 bde-section">
@@ -48,6 +54,7 @@ export default function Reservation() {
                   </li>
                 </ul>
               </div>
+
               <div className="bde-button-238-107 bde-button booking-link">
                 <a
                   className="breakdance-link button-atom button-atom--custom bde-button__button"
@@ -55,11 +62,13 @@ export default function Reservation() {
                   target="_blank"
                   data-type="url"
                   rel="noopener noreferrer"
+                  onClick={trackReservationClick} // ✅ Added tracking
                 >
                   <span className="button-atom__text">{t.reservationBookButton}</span>
                 </a>
               </div>
             </div>
+
             <div className="bde-column-238-104 bde-column">
               <Image
                 className="bde-image2-238-106 bde-image2"
