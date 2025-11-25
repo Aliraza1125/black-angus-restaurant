@@ -39,14 +39,14 @@ export default function RootLayout({ children }) {
     <html lang="fr-FR" className={`${antonio.variable} ${outfit.variable}`}>
       <head>
 
-        {/* ✅ Google Tag Manager – must be highest in head */}
+        {/* ✅ Google Tag Manager (TEST) – must be highest in head */}
         <script
           dangerouslySetInnerHTML={{
             __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
             j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             'https://analytics.restaurantblackangus.com/gmmwbh05kssnwvn.js?awl='+i.replace(/^GTM-/, '')+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-57RHP55Z');`,
+            })(window,document,'script','dataLayer','GTM-5MQCS992');`,
           }}
         />
 
@@ -73,10 +73,10 @@ export default function RootLayout({ children }) {
 
       <body className="wp-singular page-template-default page wp-theme-breakdance-zero-theme breakdance">
 
-        {/* ✅ Google Tag Manager (noscript) – must appear immediately after <body> */}
+        {/* ✅ Google Tag Manager (noscript) (TEST) – must appear immediately after <body> */}
         <noscript>
           <iframe
-            src="https://analytics.restaurantblackangus.com/ns.html?id=GTM-57RHP55Z"
+            src="https://analytics.restaurantblackangus.com/ns.html?id=GTM-5MQCS992"
             height="0"
             width="0"
             style={{ display: "none", visibility: "hidden" }}

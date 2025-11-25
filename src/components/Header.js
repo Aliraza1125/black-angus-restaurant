@@ -1,18 +1,9 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { trackPhoneClick, trackReservationClick } from "../utils/tracking";
 
 const Header = ({ language, handleLanguageChange, t }) => {
-  // ------------ Tracking handlers -------------
-  const trackPhoneClick = () => {
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({ event: "Clic_telephone" });
-  };
-
-  const trackReservationClick = () => {
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({ event: "Clic_reservation" });
-  };
 
   return (
     <>

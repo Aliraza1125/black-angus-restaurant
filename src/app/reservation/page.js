@@ -2,15 +2,10 @@
 
 import Image from 'next/image';
 import { useLanguage } from '../../context/LanguageContext';
+import { trackReservationClick } from '../../utils/tracking';
 
 export default function Reservation() {
   const { t } = useLanguage();
-
-  // ------------ Tracking handler -------------
-  const trackReservationClick = () => {
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({ event: "Clic_reservation" });
-  };
 
   return (
     <div className="breakdance">

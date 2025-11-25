@@ -1,29 +1,9 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { trackPhoneClick, trackReservationClick, trackInstagramClick, trackLegalMentionsClick } from '../utils/tracking';
 
 const Footer = ({ t }) => {
-
-  // ------------ Tracking handlers -------------
-  const trackPhoneClick = () => {
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({ event: "Clic_telephone" });
-  };
-
-  const trackReservationClick = () => {
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({ event: "Clic_reservation" });
-  };
-
-  const trackInstagramClick = () => {
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({ event: "clic_instagram" });
-  };
-
-  const trackLegalMentionsClick = () => {
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({ event: "clic_mentions_legales" });
-  };
 
   return (
     <>
