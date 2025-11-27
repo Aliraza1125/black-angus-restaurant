@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { trackPhoneClick, trackReservationClick, trackInstagramClick, trackLegalMentionsClick } from '../utils/tracking';
+import { trackPhoneClick, trackInstagramClick, trackLegalMentionsClick } from '../utils/tracking';
 
 const Footer = ({ t }) => {
 
@@ -84,12 +84,11 @@ const Footer = ({ t }) => {
                 </a>
               </div>
 
-              {/* RESERVATION (tracking added) */}
+              {/* RESERVATION */}
               <div className="bde-button-42-114 bde-button booking-link">
                 <Link
                   className="breakdance-link button-atom button-atom--custom bde-button__button"
                   href="/reservation"
-                  onClick={trackReservationClick}
                 >
                   <span className="button-atom__text">{t.reservation}</span>
                 </Link>

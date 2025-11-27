@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { trackPhoneClick, trackReservationClick } from "../utils/tracking";
+import { trackPhoneClick } from "../utils/tracking";
 
 const Header = ({ language, handleLanguageChange, t }) => {
 
@@ -103,7 +103,6 @@ const Header = ({ language, handleLanguageChange, t }) => {
                   <Link
                     className="breakdance-link button-atom button-atom--custom bde-button__button"
                     href="/reservation"
-                    onClick={trackReservationClick}
                   >
                     <span className="button-atom__text">{t.book}</span>
                   </Link>
@@ -182,7 +181,6 @@ const Header = ({ language, handleLanguageChange, t }) => {
               <Link
                 className="breakdance-link button-atom button-atom--custom bde-button__button"
                 href="/reservation"
-                onClick={trackReservationClick}
               >
                 <span className="button-atom__text">{t.bookYourBlackAngus}</span>
               </Link>
