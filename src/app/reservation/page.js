@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { useLanguage } from '../../context/LanguageContext';
 import { trackReservationClick } from '../../utils/tracking';
 
@@ -53,11 +54,10 @@ export default function Reservation() {
               <div className="bde-button-238-107 bde-button booking-link">
                 <a
                   className="breakdance-link button-atom button-atom--custom bde-button__button"
-                  href="https://bookings.zenchef.com/results?rid=369522"
+                  href="/reservation-zc"
                   target="_blank"
-                  data-type="url"
                   rel="noopener noreferrer"
-                  onClick={trackReservationClick} // ✅ Added tracking
+                  onClick={trackReservationClick}
                 >
                   <span className="button-atom__text">{t.reservationBookButton}</span>
                 </a>
