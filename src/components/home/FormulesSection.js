@@ -19,8 +19,8 @@ export default function FormulesSection({ t }) {
           <div className="bde-column-769-320 bde-column">
             <div className="bde-div-769-127 bde-div">
               <div className="bde-div-769-359 bde-div">
-                <h2 className="bde-heading-769-128 bde-heading">FORMULES</h2>
-                <h2 className="bde-heading-769-358 bde-heading">Midi et Soir</h2>
+                <h2 className="bde-heading-769-128 bde-heading">{t.formulesTitle}</h2>
+                <h2 className="bde-heading-769-358 bde-heading">{t.formulesSubtitle}</h2>
               </div>
               <Image
                 src="/wp-content/uploads/2025/01/red-top-border.png"
@@ -33,15 +33,15 @@ export default function FormulesSection({ t }) {
               />
               <div className="bde-div-769-190 bde-div">
                 <h3 className="bde-heading-769-262 bde-heading">
-                  Accompagné de sa salade d&apos;accueil, frites et purée
+                  {t.formulesAccompaniment}
                 </h3>
                 <div className="bde-div-769-261 bde-div">
                   <div className="bde-div-769-263 bde-div">
                     <h4 className="bde-heading-769-266 bde-heading bde-preset-b80cbe54-952c-403a-8fdd-b8057bda7e01">
-                      Black Red
+                      {t.formuleBlackRedTitle}
                     </h4>
                     <h5 className="bde-heading-769-267 bde-heading bde-preset-a58ba013-22d2-43a1-8b7d-693453589819">
-                      Cœur de rumsteak Angus
+                      {t.formuleBlackRedDesc}
                     </h5>
                   </div>
                   <div className="bde-text-769-328 bde-text formule-prix bde-preset-b082af3a-c9da-4742-b993-e6ccf27dc75e">
@@ -51,10 +51,10 @@ export default function FormulesSection({ t }) {
                 <div className="bde-div-769-273 bde-div">
                   <div className="bde-div-769-274 bde-div">
                     <h4 className="bde-heading-769-275 bde-heading bde-preset-b80cbe54-952c-403a-8fdd-b8057bda7e01">
-                      Black Lover
+                      {t.formuleBlackLoverTitle}
                     </h4>
                     <h5 className="bde-heading-769-276 bde-heading bde-preset-a58ba013-22d2-43a1-8b7d-693453589819">
-                      Entrecôte Angus
+                      {t.formuleBlackLoverDesc}
                     </h5>
                   </div>
                   <div className="bde-text-769-330 bde-text formule-prix bde-preset-b082af3a-c9da-4742-b993-e6ccf27dc75e">
@@ -64,10 +64,10 @@ export default function FormulesSection({ t }) {
                 <div className="bde-div-769-268 bde-div">
                   <div className="bde-div-769-269 bde-div">
                     <h4 className="bde-heading-769-270 bde-heading bde-preset-b80cbe54-952c-403a-8fdd-b8057bda7e01">
-                      Black Prime
+                      {t.formuleBlackPrimeTitle}
                     </h4>
                     <h5 className="bde-heading-769-271 bde-heading bde-preset-a58ba013-22d2-43a1-8b7d-693453589819">
-                      Filet de bœuf Angus
+                      {t.formuleBlackPrimeDesc}
                     </h5>
                   </div>
                   <div className="bde-text-769-329 bde-text formule-prix bde-preset-b082af3a-c9da-4742-b993-e6ccf27dc75e">
@@ -77,7 +77,7 @@ export default function FormulesSection({ t }) {
               </div>
             </div>
             <div className="bde-div-769-337 bde-div">
-              <h2 className="bde-heading-769-338 bde-heading">Déjeuner</h2>
+              <h2 className="bde-heading-769-338 bde-heading">{t.formulesLunchTitle}</h2>
               <Image
                 src="/wp-content/uploads/2025/01/red-top-border.png"
                 alt="Red Top Border"
@@ -89,16 +89,16 @@ export default function FormulesSection({ t }) {
               />
               <div className="bde-div-769-340 bde-div">
                 <h3 className="bde-heading-769-341 bde-heading">
-                  Accompagné de sa salade d&apos;accueil et ses frites
+                  {t.formulesLunchAccompaniment}
                 </h3>
                 <div className="bde-div-769-342 bde-div">
                   <div className="bde-div-769-343 bde-div">
                     <div className="bde-div-769-357 bde-div">
                       <h4 className="bde-heading-769-344 bde-heading bde-preset-b80cbe54-952c-403a-8fdd-b8057bda7e01">
-                        Black Burger
+                        {t.formuleBlackBurgerTitle}
                       </h4>
                       <h5 className="bde-heading-769-345 bde-heading bde-preset-a58ba013-22d2-43a1-8b7d-693453589819">
-                        Steak haché 150g Angus
+                        {t.formuleBlackBurgerDesc}
                       </h5>
                     </div>
                   </div>
@@ -107,11 +107,7 @@ export default function FormulesSection({ t }) {
                   </div>
                 </div>
                 <div className="bde-text-769-335 bde-text">
-                  Uniquement du lundi
-                  <br />
-                  au vendredi de 12h à 17h,
-                  <br />
-                  hors jours fériés
+                  {t.formulesLunchAvailability}
                 </div>
               </div>
             </div>

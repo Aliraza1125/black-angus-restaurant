@@ -83,6 +83,22 @@ export const translations = {
     legalNoticesSiret: "Siret : 98234605800018",
     legalNoticesAddress: "Adresse du siège social : 71 RUE DE PROVENCE 75009 PARIS",
     legalNoticesHosting: "L'hébergeur du site est : Siteground",
+
+     // Formules Section
+  formulesTitle: "FORMULES",
+  formulesSubtitle: "Midi et Soir",
+  formulesAccompaniment: "Accompagné de sa salade d'accueil, frites et purée",
+  formuleBlackRedTitle: "Black Red",
+  formuleBlackRedDesc: "Cœur de rumsteak Angus",
+  formuleBlackLoverTitle: "Black Lover",
+  formuleBlackLoverDesc: "Entrecôte Angus",
+  formuleBlackPrimeTitle: "Black Prime",
+  formuleBlackPrimeDesc: "Filet de bœuf Angus",
+  formulesLunchTitle: "Déjeuner",
+  formulesLunchAccompaniment: "Accompagné de sa salade d'accueil et ses frites",
+  formuleBlackBurgerTitle: "Black Burger",
+  formuleBlackBurgerDesc: "Steak haché 150g Angus",
+  formulesLunchAvailability: "Uniquement du lundi\nau vendredi de 12h à 17h,\nhors jours fériés",
   },
   en: {
     // Header
@@ -168,5 +184,21 @@ export const translations = {
     legalNoticesSiret: "Siret: 98234605800018",
     legalNoticesAddress: "Head office address: 71 RUE DE PROVENCE 75009 PARIS",
     legalNoticesHosting: "The website host is: Siteground",
+
+      // Formules Section
+  formulesTitle: "FORMULAS",
+  formulesSubtitle: "Lunch and Dinner",
+  formulesAccompaniment: "Served with welcome salad, fries and mashed potatoes",
+  formuleBlackRedTitle: "Black Red",
+  formuleBlackRedDesc: "Angus rump steak",
+  formuleBlackLoverTitle: "Black Lover",
+  formuleBlackLoverDesc: "Angus ribeye",
+  formuleBlackPrimeTitle: "Black Prime",
+  formuleBlackPrimeDesc: "Angus beef tenderloin",
+  formulesLunchTitle: "Lunch",
+  formulesLunchAccompaniment: "Served with welcome salad and fries",
+  formuleBlackBurgerTitle: "Black Burger",
+  formuleBlackBurgerDesc: "150g Angus ground steak",
+  formulesLunchAvailability: "Only Monday to Friday\nfrom 12pm to 5pm,\nexcluding public holidays",
   }
 };
