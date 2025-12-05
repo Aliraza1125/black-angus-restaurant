@@ -10,7 +10,7 @@ export const metadata = {
   openGraph: {
     title: "Black Angus, le restaurant qui sublime la viande à Paris 11 ème",
     description: "Le nouveau restaurant Black Angus vous propose le meilleur de la viande à Paris sur la place de la république, avec trois formules offrant de belles pièces comme le cœur de rumsteak, l'entrecôte ou le filet de bœuf.",
-    url: "https://restaurantblackangus.com/",
+    // url: "https://restaurantblackangus.com/",
     type: "website",
     locale: "fr_FR",
     siteName: "Restaurant Black Angus Paris",
@@ -39,14 +39,14 @@ export default function RootLayout({ children }) {
     <html lang="fr-FR" className={`${antonio.variable} ${outfit.variable}`}>
       <head>
 
-        {/* ✅ Google Tag Manager (TEST) – must be highest in head */}
+        {/* ✅ Google Tag Manager (PRODUCTION) – must be highest in head */}
         <script
           dangerouslySetInnerHTML={{
             __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
             j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             'https://analytics.restaurantblackangus.com/gmmwbh05kssnwvn.js?awl='+i.replace(/^GTM-/, '')+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-5MQCS992');`,
+            })(window,document,'script','dataLayer','GTM-57RHP55Z');`,
           }}
         />
 
@@ -73,10 +73,10 @@ export default function RootLayout({ children }) {
 
       <body className="wp-singular page-template-default page wp-theme-breakdance-zero-theme breakdance">
 
-        {/* ✅ Google Tag Manager (noscript) (TEST) – must appear immediately after <body> */}
+        {/* ✅ Google Tag Manager (noscript) (PRODUCTION) – must appear immediately after <body> */}
         <noscript>
           <iframe
-            src="https://analytics.restaurantblackangus.com/ns.html?id=GTM-5MQCS992"
+            src="https://analytics.restaurantblackangus.com/ns.html?id=GTM-57RHP55Z"
             height="0"
             width="0"
             style={{ display: "none", visibility: "hidden" }}
