@@ -104,7 +104,6 @@ export default function RootLayout({ children }) {
 
         <Script src="https://unpkg.com/gsap@3.12.2/dist/gsap.min.js" strategy="lazyOnload" crossOrigin="anonymous" />
         <Script src="https://unpkg.com/gsap@3.12.2/dist/ScrollTrigger.min.js" strategy="lazyOnload" crossOrigin="anonymous" />
-        <Script src="https://cdn.trustindex.io/loader.js" strategy="lazyOnload" crossOrigin="anonymous" />
       </body>
     </html>
   );
