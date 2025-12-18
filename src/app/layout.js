@@ -1,6 +1,7 @@
 import Script from "next/script";
 import "./globals.css";
 import LayoutWrapper from "../components/LayoutWrapper";
+import FathomAnalytics from "../components/FathomAnalytics";
 import { antonio, outfit } from "./fonts";
 
 export const metadata = {
@@ -83,6 +84,7 @@ export default function RootLayout({ children }) {
           ></iframe>
         </noscript>
 
+        <FathomAnalytics />
         <LayoutWrapper>
           {children}
         </LayoutWrapper>
